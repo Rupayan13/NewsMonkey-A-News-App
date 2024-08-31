@@ -4,13 +4,13 @@ import Spinner from './Spinner';
 import PropTypes from 'prop-types'
 
 export class News extends Component {
-    static defaultProps ={
+    static defaultProps = {
         country: "in",
         pageSize: 8,
         category: 'general'
     }
 
-    static propTypes ={
+    static propTypes = {
         country: PropTypes.string,
         pageSize: PropTypes.number,
         category: PropTypes.string
@@ -79,7 +79,7 @@ export class News extends Component {
                 <div className="row">
                     {!this.state.loading && this.state.articles.map((element) => {
                         return <div className="col-md-4" key={element.url}>
-                            <Newsitem title={element.title ? element.title.slice(0, 45) : ""} description={element.description ? element.description.slice(0, 88) : ""} imageurl={element.urlToImage} newsUrl={element.url} />
+                            <Newsitem title={element.title ? element.title.slice(0, 45) : ""} description={element.description ? element.description.slice(0, 88) : ""} imageurl={element.urlToImage} newsUrl={element.url} author={element.author} date={element.publishedAt} source={element.source.name} />
                         </div>
                     })}
                 </div>
